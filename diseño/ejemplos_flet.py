@@ -12,14 +12,14 @@ import flet as ft
 # ---------------------------------------------------------------- 1. TOKENS
 class Tema:
     PRIMARIO = "#E4572E"
-    PRIMARIO_SUAVE = "#FDEBE3"
+    PRIMARIO_SUAVE = "#FFD8C7"
     BG = "#FBF7F1"
     BORDE = "#E9E2D6"
     TEXTO = "#1F1A17"
     MUTED = "#7A7068"
     DARK = "#2B211C"
     OK, OK_BG = "#15803D", "#DCFCE7"
-    WARN, WARN_BG = "#B45309", "#FEF3C7"
+    WARN, WARN_BG = "#B45309", "#FFEEAB"
     ERROR, ERROR_BG = "#B91C1C", "#FEE2E2"
     INFO, INFO_BG = "#1D4ED8", "#DBEAFE"
     GRIS = "#EFEAE2"
