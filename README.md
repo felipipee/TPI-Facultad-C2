@@ -36,6 +36,20 @@ python main.py
 
 Los datos viven en memoria: cada vez que se abre el programa vuelven a los valores de ejemplo.
 
+## Versión web
+
+La app también está publicada en **https://tpifacu.vercel.app**. Python corre dentro del navegador, así que cada visitante tiene su propia copia de los datos de ejemplo. La primera carga tarda unos segundos.
+
+Para actualizarla después de cambiar el código:
+
+```bash
+flet build web --yes                     # compila en build/web
+rm -rf web && cp -r build/web web        # copia el resultado a web/
+git add web && git commit -m "Actualizar versión web" && git push
+```
+
+Vercel publica la carpeta `web/` tal cual: no compila nada (ver `vercel.json`).
+
 ## Funcionalidades
 
 **Inicio de sesión**

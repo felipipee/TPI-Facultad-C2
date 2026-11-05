@@ -1,0 +1,7 @@
+# Vercel solo publica la carpeta web/ (la app ya compilada).
+# El código Python no se sube para que no intente ejecutarlo como servidor.
+UI/
+assets/
+build/
+main.py
+pyproject.toml
