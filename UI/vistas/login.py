@@ -105,7 +105,13 @@ class VistaLogin(Vista):
         self.page.update()
 
     async def _salir(self, e):
-        await self.page.window.close()
+        if self.page.web:
+            # En el navegador no se puede cerrar la pestaña desde el programa:
+            # mostramos el cierre y se vuelve a intentar recargando la página.
+            self.formulario.content = self._cerrado()
+            self.page.update()
+        else:
+            await self.page.window.close()
 
     # -------------------------------------------------------- contenidos
     def _form(self):
@@ -137,8 +143,20 @@ class VistaLogin(Vista):
                     "informa y se cierra.", 18, color=Tema.TEXTO_SUAVE, text_align=ft.TextAlign.CENTER),
                 barra_intentos(MAX_INTENTOS),
                 ft.Row([boton("Salir", self._salir, "secundario", expand=True)]),
-                txt("Podés volver a abrir la aplicación para intentarlo de nuevo.", 14,
+                txt("Podés recargar la página para intentarlo de nuevo." if self.page.web
+                    else "Podés volver a abrir la aplicación para intentarlo de nuevo.", 14,
                     color=Tema.DESHABILITADO, text_align=ft.TextAlign.CENTER),
+            ],
+        )
+
+    def _cerrado(self):
+        return ft.Column(
+            tight=True, spacing=20, horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                logo(72),
+                txt("Sesión finalizada", 38, 800, text_align=ft.TextAlign.CENTER),
+                txt("Recargá la página para volver a intentarlo.", 18, color=Tema.TEXTO_SUAVE,
+                    text_align=ft.TextAlign.CENTER),
             ],
         )
 
