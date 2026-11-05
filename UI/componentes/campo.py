@@ -35,7 +35,8 @@ class Campo:
         self.error_txt = txt("", 13, color=Tema.ERROR, visible=False)
         self.ayuda_txt = txt(ayuda or "", 13, color=Tema.TEXTO_SUAVE, visible=bool(ayuda))
         hijos = [c for c in (_etiqueta(etiqueta), self.input, self.error_txt, self.ayuda_txt) if c]
-        self.control = ft.Column(hijos, spacing=8, expand=expand, width=width)
+        self.control = ft.Column(hijos, spacing=8, expand=expand, width=width,
+                                  horizontal_alignment=ft.CrossAxisAlignment.STRETCH)
         self._pintar(False)
 
     def _pintar(self, con_error):
@@ -55,8 +56,8 @@ class Campo:
         self.input.value = str(v)
 
     def error(self, mensaje: str | None):
-        """Marca el campo en rojo con el mensaje; None lo limpia."""
-        self._pintar(bool(mensaje))
+        """Marca el campo en rojo con el mensaje; "" marca sin texto; None lo limpia."""
+        self._pintar(mensaje is not None)
         self.error_txt.value = mensaje or ""
         self.error_txt.visible = bool(mensaje)
         self.ayuda_txt.visible = not mensaje and bool(self.ayuda_txt.value)
@@ -85,7 +86,8 @@ class Selector:
         )
         self.error_txt = txt("", 13, color=Tema.ERROR, visible=False)
         hijos = [c for c in (_etiqueta(etiqueta), ft.Row([self.input]), self.error_txt) if c]
-        self.control = ft.Column(hijos, spacing=8, expand=expand, width=width)
+        self.control = ft.Column(hijos, spacing=8, expand=expand, width=width,
+                                  horizontal_alignment=ft.CrossAxisAlignment.STRETCH)
 
     def _cambio(self, e):
         if self._on_change:
@@ -96,7 +98,7 @@ class Selector:
         return self.input.value
 
     def error(self, mensaje: str | None):
-        self.input.border_color = Tema.ERROR if mensaje else Tema.BORDE
+        self.input.border_color = Tema.ERROR if mensaje is not None else Tema.BORDE
         self.error_txt.value = mensaje or ""
         self.error_txt.visible = bool(mensaje)
 
