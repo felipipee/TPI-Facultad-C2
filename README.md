@@ -77,7 +77,11 @@ Todas las bajas son lógicas: los registros se marcan como eliminados y no se bo
 
 ```
 main.py                 Punto de entrada: abre la ventana y crea la App
+pyproject.toml          Datos del proyecto y dependencias (lo usa flet build)
 assets/fonts/           Tipografía Inter
+web/                    Versión web ya compilada (es lo que publica Vercel)
+vercel.json             Le indica a Vercel que publique web/ sin compilar
+.vercelignore           Evita que Vercel suba el código Python
 UI/
 ├── app.py              Navegación entre pantallas y sesión del usuario
 ├── tema.py             Colores, tipografía y formato de precios
