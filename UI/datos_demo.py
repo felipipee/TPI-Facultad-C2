@@ -1,10 +1,4 @@
-"""
-Datos de ejemplo en memoria para que la interfaz funcione de punta a punta.
-
-Las vistas solo hablan con `ServicioDemo`. Cuando tengan la capa real
-(Entidades/ + servicios), reemplacen esta clase por la suya respetando
-los mismos métodos y excepciones, y la UI no cambia.
-"""
+"""Modelos, reglas de negocio y datos de ejemplo en memoria."""
 from dataclasses import dataclass, field
 from datetime import date
 from enum import Enum

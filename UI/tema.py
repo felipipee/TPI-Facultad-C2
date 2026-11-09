@@ -7,7 +7,6 @@ class Tema:
     PRIMARIO = "#E4572E"
     PRIMARIO_SUAVE = "#FDEBE3"
     OSCURO = "#2B211C"
-    OSCURO_HOVER = "#3A2E28"
     OSCURO_TARJETA = "#3D312A"
     FONDO = "#FBF7F1"
     BORDE = "#E9E2D6"
@@ -25,8 +24,6 @@ class Tema:
     GRIS = "#EFEAE3"            # badges neutros, campos bloqueados
     CABECERA_TABLA = "#F5F1EB"
     DESHABILITADO = "#A8A098"
-
-    RADIO = 12
 
 
 # Una familia por peso: Flet registra un archivo por familia.

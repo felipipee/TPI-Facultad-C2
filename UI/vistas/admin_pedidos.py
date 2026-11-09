@@ -10,7 +10,7 @@ from UI.componentes.campo import Campo, Opciones, Selector
 from UI.componentes.marca import encabezado, nota, tarjeta
 from UI.componentes.modal import (abrir_modal, cerrar_modal, modal_confirmar, pie_modal,
                                   titulo_modal)
-from UI.componentes.pedido import dato, fila_total, tabla_detalles
+from UI.componentes.pedido import fila_total, tabla_detalles
 from UI.componentes.tabla import acciones, tabla
 from UI.datos_demo import TRANSICIONES_VALIDAS, Estado, FoodStoreError, FormaPago
 from UI.tema import Tema, pesos, txt

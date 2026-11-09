@@ -38,9 +38,9 @@ class App:
         "cliente_datos": VistaClienteDatos,
     }
 
-    def __init__(self, page: ft.Page, servicio=None):
+    def __init__(self, page: ft.Page):
         self.page = page
-        self.servicio = servicio or ServicioDemo()
+        self.servicio = ServicioDemo()
         self.usuario = None
         page.title = "Food Store"
         page.window.width, page.window.height = 1440, 900

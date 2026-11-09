@@ -85,7 +85,7 @@ vercel.json             Le indica a Vercel que publique web/ sin compilar
 UI/
 ├── app.py              Navegación entre pantallas y sesión del usuario
 ├── tema.py             Colores, tipografía y formato de precios
-├── datos_demo.py       Datos de ejemplo y reglas de negocio (provisorio)
+├── datos_demo.py       Modelos, reglas de negocio y datos de ejemplo
 ├── componentes/        Piezas reutilizables: botón, campo, tabla, alerta, modal...
 └── vistas/             Una clase por pantalla
     ├── vista_abc.py    Clases base abstractas y los dos menús (admin y cliente)
@@ -98,11 +98,6 @@ UI/
 
 - **La interfaz no valida ni guarda datos.** Cada pantalla llama a métodos de un objeto *servicio*. Si algo es inválido, el servicio lanza una excepción propia (`FoodStoreError` o `ErroresValidacion`) y la pantalla la muestra en el campo correspondiente.
 - **Las pantallas usan herencia.** Todas heredan de la clase abstracta `Vista`. Las del administrador heredan de `VistaAdmin` (barra lateral) y las del cliente de `VistaCliente` (barra superior), así cada pantalla solo define su contenido.
-- **El servicio se puede reemplazar.** `App` recibe el servicio como parámetro, por lo que se puede cambiar `UI/datos_demo.py` por otra implementación con los mismos métodos sin tocar las pantallas:
-
-  ```python
-  App(page, servicio=MiServicio())
-  ```
 
 ## Conceptos aplicados
 
