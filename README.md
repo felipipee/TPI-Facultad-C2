@@ -8,6 +8,10 @@ Tiene dos roles:
 - **Administrador:** gestiona categorías, productos, usuarios y pedidos.
 - **Cliente:** consulta el catálogo, sus pedidos y sus datos. No puede modificar nada.
 
+**Versión web:** https://tpifacu.vercel.app
+
+> **Estado de la entrega:** esta es la primera entrega y sabemos que el trabajo no está completo. Faltan el informe en PDF y el video de presentación, que se entregan en la segunda entrega.
+
 ## Requisitos
 
 - Python 3.10 o superior (probado con 3.14)
