@@ -1,0 +1,15 @@
+[project]
+name = "food-store"
+version = "1.0.0"
+description = "Food Store · TPI Programación II · UTN"
+requires-python = ">=3.10"
+dependencies = [
+    "flet==1.0.5",
+]
+
+[tool.flet]
+product = "Food Store"
+company = "UTN"
+
+[tool.flet.app]
+path = "."
